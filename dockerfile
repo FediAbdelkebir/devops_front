@@ -1,4 +1,4 @@
-FROM kindest/node-amd64 as node
+FROM node:lts-alpine3.16 as node
 WORKDIR /app
 COPY package.json .
 RUN npm install
