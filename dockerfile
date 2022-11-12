@@ -1,12 +1,12 @@
-FROM node:12.18.1
+FROM node:12.18.1 as build
 ENV NODE_ENV=production
 
-WORKDIR /devops_front
+WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY . .
 
 RUN npm install --production
 RUN npm install 
-COPY . .
 
-CMD [ "node", "vendor.js" ]
+FROM nginx:alpine
+COPY --from=build /app/dist/crudtuto-front /usr/share/nginx/html
