@@ -16,7 +16,7 @@ pipeline {
 
         stage('Building Docker Image') {
                 steps {
-                    sh 'docker build --rm -f DEVOPS_FRONT/dockerfile -t $DOCKERHUB_CREDENTIALS_USR/tpachatfront .'
+                    sh 'docker build --rm -f crudtuto-Front/dockerfile -t $DOCKERHUB_CREDENTIALS_USR/tpachatfront .'
                 }
         }
         stage('Login to DockerHub') {
