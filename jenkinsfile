@@ -16,7 +16,7 @@ pipeline {
 
         stage('Building Docker Image') {
                 steps {
-                    sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/tpachatFront .'
+                    sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/tpachatfront .'
                 }
         }
         stage('Login to DockerHub') {
