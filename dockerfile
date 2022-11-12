@@ -8,5 +8,5 @@ COPY . .
 
 RUN npm install --production
 RUN npm install 
-RUN ng serve
+CMD [ "ng ", "serve" ] 
 
