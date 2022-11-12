@@ -1,5 +1,6 @@
 #stage1
-FROM  node:latest as build
+FROM alpine:3.16
+ENV NODE_VERSION 14.21.1
 WORKDIR '/app'
 COPY package.json .
 COPY . .
