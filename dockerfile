@@ -1,7 +1,7 @@
 FROM node:12.18.1
 ENV NODE_ENV=production
 
-WORKDIR /app
+WORKDIR /DEVOPS_FRONT
 
 COPY ["package.json", "package-lock.json*", "./"]
 
