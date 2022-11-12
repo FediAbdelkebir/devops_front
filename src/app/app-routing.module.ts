@@ -6,6 +6,7 @@ import { ReglementComponent } from './reglement/reglement.component';
 import { SecteurActiviteComponent } from './secteur-activite/secteur-activite.component';
 import { OperateurComponent } from './operateur/operateur.component';
 import { FactureComponent } from './facture/facture.component';
+import * as ts from 'typescript';
 
 
 const routes: Routes =[
