@@ -1,4 +1,4 @@
-FROM node:latest as node
+FROM kindest/node-amd64 as node
 WORKDIR /app
 COPY package.json .
 RUN npm install
