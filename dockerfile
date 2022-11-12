@@ -1,4 +1,5 @@
-FROM node:12.18.1 AS build
+FROM node:12.18.1 
+
 ENV NODE_ENV=production
 
 WORKDIR /app
@@ -9,4 +10,4 @@ RUN npm install --production
 RUN npm install 
 
 FROM nginx:alpine
-COPY --from=build /app/dist/crudtuto-front /usr/share/nginx/html
+COPY --from=NODE_ENV /app/dist/crudtuto-front /usr/share/nginx/html
