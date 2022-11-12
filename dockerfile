@@ -6,7 +6,7 @@ WORKDIR /devops_front
 COPY ["package.json", "package-lock.json*", "./"]
 
 RUN npm install --production
-
+RUN npm install 
 COPY . .
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "vendor.js" ]
