@@ -9,5 +9,5 @@ COPY . .
 RUN npm install --production
 RUN npm install 
 RUN npm install @angular/cli@latest
-CMD [ "ng serve" ] 
+RUN ng serve 
 
