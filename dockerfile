@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:14.17.3
 WORKDIR '/usr/src/'
 COPY package.json .
 RUN npm install
