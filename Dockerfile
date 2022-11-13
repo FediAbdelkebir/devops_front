@@ -1,5 +1,5 @@
 # Stage 0, for downloading project’s npm dependencies, building and compiling the app.
-FROM node:14.13 as node
+FROM node:12.18.1 
 
 # set working directory
 RUN mkdir /usr/src/app
