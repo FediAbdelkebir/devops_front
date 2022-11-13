@@ -8,4 +8,3 @@ services:
   app:
     image: fediabdelkebir/tpachatfront
     restart: on-failure
-    env_file: ./.env
