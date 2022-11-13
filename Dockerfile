@@ -1,10 +1,10 @@
-# stage-1
-FROM node:14.17.3-alpine AS builder
+FROM node:16.14.2-alpine
 WORKDIR /app
-COPY . .
-RUN npm install
-RUN npm run build
 
-# stage -2
+RUN npm install
+COPY . .
+RUN npm run build --prod
+
 FROM nginx:alpine
-COPY --from=builder /app/dist/comp-lib /usr/share/nginx/html
+COPY /app/dist/crudtuto-Front /usr/share/nginx/html
+EXPOSE 80
