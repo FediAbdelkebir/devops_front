@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  web:
+    image : atallahdoc/tpachatfront
+    ports:
+    - "4200:80"
+  app:
+    image: fediabdelkebir/tpachatfront
+    restart: on-failure
+    env_file: ./.env
