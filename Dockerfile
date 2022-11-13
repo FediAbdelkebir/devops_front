@@ -13,4 +13,4 @@ EXPOSE 4200:4200
 RUN npm install
 
 # Start Angular
-CMD ng serve --host 0.0.0.0
+RUN node_modules/.bin/ng build --prod
