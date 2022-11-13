@@ -4,6 +4,6 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 
-FROM nginx:alpine
+FROM nginx:1.17.1-alpine
 COPY /app/dist/crudtuto-Front /usr/share/nginx/html
 EXPOSE 80
