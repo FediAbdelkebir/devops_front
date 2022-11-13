@@ -1,0 +1,33 @@
+/* groovylint-disable-next-line CompileStatic */
+pipeline {
+    agent any
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerHub')
+    }
+
+    stages {
+        stage('Git') {
+            steps {
+                echo 'Getting Frontend project from Git'
+                git branch:'Abdelhamid',
+                 url: 'https://github.com/FediAbdelkebir/devops_front.git'
+            }
+        }
+
+        stage('Building Docker Image') {
+                steps {
+                    sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/tpachatfront .'
+                }
+        }
+        stage('Login to DockerHub') {
+                steps {
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
+                }
+        }
+        stage('Push to DockerHub') {
+                steps {
+                    sh 'docker push $DOCKERHUB_CREDENTIALS_USR/tpachatfront'
+                }
+        }
+    }
+}
