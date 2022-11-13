@@ -2,14 +2,10 @@
 
 FROM node:12.8-alpine
 
-# Create working directory
-RUN mkdir -p /home/node/app
-
 # Set working directory
-WORKDIR /home/node/app
+WORKDIR /.
 
-# Add `/home/node/app/node_modules/.bin` to $PATH
-ENV PATH /home/node/app/node_modules/.bin:$PATH
+COPY . .
 
 # Expose ports
 EXPOSE 4200:4200
