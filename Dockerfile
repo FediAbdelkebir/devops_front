@@ -12,7 +12,7 @@ WORKDIR /home/node/app
 ENV PATH /home/node/app/node_modules/.bin:$PATH
 
 # Copy code
-COPY ./angular /home/node/app
+COPY ./crud-tuto-front /home/node/app
 
 # Expose ports
 EXPOSE 4200:4200
