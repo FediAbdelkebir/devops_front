@@ -11,9 +11,6 @@ WORKDIR /home/node/app
 # Add `/home/node/app/node_modules/.bin` to $PATH
 ENV PATH /home/node/app/node_modules/.bin:$PATH
 
-# Copy code
-COPY ./devops_front /home/node/app
-
 # Expose ports
 EXPOSE 4200:4200
 
