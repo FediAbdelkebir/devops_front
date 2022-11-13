@@ -1,6 +1,6 @@
 ### Local development only ###
 
-FROM node:12.8-alpine
+FROM node:12.18.1-alpine
 
 # Set working directory
 WORKDIR /.
