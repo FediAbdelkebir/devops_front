@@ -1,12 +1,26 @@
-FROM node:12.18.1 
+### Local development only ###
 
-ENV NODE_ENV=production
+FROM node:12.8-alpine
 
-WORKDIR /.
+# Install bash
+RUN apk add --no-cache bash
 
-COPY . .
+# Create working directory
+RUN mkdir -p /home/node/app
 
-RUN npm install --production
-RUN npm install 
-RUN npm install @angular/cli@latest
-CMD [ "npm","run-script","build" ]
+# Set working directory
+WORKDIR /home/node/app
+
+# Add `/home/node/app/node_modules/.bin` to $PATH
+ENV PATH /home/node/app/node_modules/.bin:$PATH
+
+# Copy code
+COPY ./angular /home/node/app
+
+# Expose ports
+EXPOSE 4200:4200
+
+RUN npm install
+
+# Start Angular
+CMD ng serve --host 0.0.0.0
