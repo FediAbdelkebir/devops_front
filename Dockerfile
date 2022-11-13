@@ -2,9 +2,6 @@
 
 FROM node:12.8-alpine
 
-# Install bash
-RUN apk add --no-cache bash
-
 # Create working directory
 RUN mkdir -p /home/node/app
 
