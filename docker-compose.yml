@@ -3,6 +3,6 @@ version: "3.3"
 services:
   web:
     image : fediabdelkebir/tpachatfront
-    command: sh -c "npm i && node_modules/.bin/ng start --prod"
+    command: sh -c "npm i && node_modules/.bin/ng serve --prod"
     ports:
      - "4200:4200"
