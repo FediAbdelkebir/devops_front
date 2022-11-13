@@ -7,5 +7,5 @@ RUN npm run build --prod
 
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY /usr/src/app/dist/crudtuto-Front /usr/share/nginx/html
+COPY /usr/dist/crudtuto-Front /usr/share/nginx/html
 EXPOSE 80
