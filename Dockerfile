@@ -9,4 +9,4 @@ COPY . .
 RUN npm install --production
 RUN npm install 
 RUN npm install @angular/cli@latest
-RUN node_modules/.bin/ng build --prod
+CMD [ "npm", "start" ]
