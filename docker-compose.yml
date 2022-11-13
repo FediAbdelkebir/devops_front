@@ -3,10 +3,9 @@ version: "3.3"
 services:
   web:
     image : fediabdelkebir/tpachatfront
-    command: CMD [ "npm", "start" ]
+    command: sh -c "npm start"
     volumes:
-     - ./:/home/node/app
-     - node_modules:/home/node/app/node_modules
+     - node_modules:./node_modules
     ports:
      - "4200:4200"
 volumes:
