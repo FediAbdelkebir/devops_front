@@ -1,5 +1,12 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} achat-1.0.jar
-ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
-EXPOSE 8089
+FROM node:12.18.1 
+
+ENV NODE_ENV=production
+
+WORKDIR /.
+
+COPY . .
+
+RUN npm install --production
+RUN npm install 
+RUN npm install @angular/cli@latest
+RUN ng serve 
