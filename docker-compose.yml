@@ -3,7 +3,7 @@ version: "3.3"
 services:
   web:
     image : fediabdelkebir/tpachatfront
-    command: sh -c "npm install @angular/cli@latest"
+    command: sh -c "npm install"
     command: sh -c "npm start"
     volumes:
      - ./:/home/node/app
