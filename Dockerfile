@@ -11,6 +11,7 @@ COPY . .
 EXPOSE 4200:4200
 
 RUN npm install
+RUN npm install @angular/cli@latest
 
 # Start Angular
 CMD ng serve --host 0.0.0.0
