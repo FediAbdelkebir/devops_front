@@ -3,6 +3,6 @@ version: "3.3"
 services:
   web:
     image : fediabdelkebir/tpachatfront
-    command: sh -c "npm i && npm install -g @angular/cli && pwd "
+    command: sh -c "npm i && npm install -g @angular/cli && ls "
     ports:
      - "4200:4200"
