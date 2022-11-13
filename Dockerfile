@@ -1,11 +1,10 @@
-FROM node:16.14.2-alpine
+FROM node:16.14.2-alpine as build
 WORKDIR /app
-COPY . .
+COPY package.json /app/
 RUN npm install
+COPY . /app/
 RUN npm run build --prod
 
 FROM nginx:alpine
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY /app/dist/crudtuto-Front /usr/share/nginx/html
+COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
 EXPOSE 80
