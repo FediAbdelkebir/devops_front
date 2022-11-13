@@ -9,7 +9,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Getting Frontend project from Git'
-                git branch:'Abdelhamid',
+                git branch:'Fedi',
                  url: 'https://github.com/FediAbdelkebir/devops_front.git'
             }
         }
