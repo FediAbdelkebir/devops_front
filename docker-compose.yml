@@ -3,8 +3,12 @@ version: "3.3"
 services:
   web:
     image : atallahdoc/tpachatfront
+    command: sh -c "npm start"
+    volumes:
+     - ./:/home/node/app
+     - node_modules:/home/node/app/node_modules
     ports:
-    - "4200:80"
-  app:
-    image: fediabdelkebir/tpachatfront
-    restart: on-failure
+     - "4200:4200"
+volumes:
+  node_modules:
+
