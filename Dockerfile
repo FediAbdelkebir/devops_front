@@ -1,9 +1,11 @@
-FROM node:16.14.2-alpine as node 
-WORKDIR /app
-RUN npm install -g @angular/cli
-COPY . .
+FROM node:14.17.3-alpine AS build
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
 RUN npm install
+COPY . .
 RUN npm run build --prod
 
 FROM nginx:alpine
-COPY --from=node /app/dist/crudtuto-Front /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /usr/src/app/dist/crudtuto-Front /usr/share/nginx/html
+EXPOSE 80
