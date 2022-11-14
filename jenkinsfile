@@ -2,21 +2,22 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerHub')
+        DOCKERHUB_CREDENTIALS = credentials('docker')
+        
     }
 
     stages {
+        
         stage('Git') {
             steps {
-                echo 'Getting Frontend project from Git'
-                git branch:'hazem',
+                echo 'Getting project from Git';
+                 git branch:'hazem',
                  url: 'https://github.com/FediAbdelkebir/devops_front.git'
             }
         }
-
         stage('Building Docker Image') {
                 steps {
-                    sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/frontdevops .'
+                    sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/frontdevopss .'
                 }
         }
         stage('Login to DockerHub') {
@@ -26,7 +27,7 @@ pipeline {
         }
         stage('Push to DockerHub') {
                 steps {
-                    sh 'docker push $DOCKERHUB_CREDENTIALS_USR/frontdevops'
+                    sh 'docker push $DOCKERHUB_CREDENTIALS_USR/frontdevopss'
                 }
         }
 		
