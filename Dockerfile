@@ -4,8 +4,8 @@ COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
 RUN npm run build --prod
+EXPOSE 80
 
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/src/app/dist/crudtuto-Front /usr/share/nginx/html
-EXPOSE 80
