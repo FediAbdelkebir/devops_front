@@ -1,4 +1,4 @@
-FROM node:16.14.2-alpine AS build
+FROM node:14.17.3-alpine AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
