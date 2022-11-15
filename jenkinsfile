@@ -1,5 +1,4 @@
 /* groovylint-disable-next-line CompileStatic */
-properties([pipelineTriggers([githubPush()])])
 pipeline {
     agent any
     environment {
